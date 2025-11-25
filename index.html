@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rishu Kumar — Portfolio</title>
+  <meta name="description" content="Portfolio of Rishu Kumar — Frontend Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --container:1100px;
+      color-scheme: dark;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071021 0%, #0b1524 100%);color:#e6eef8}
+    .wrap{max-width:var(--container);margin:40px auto;padding:28px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .logo span{font-size:18px}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{color:#fff;background:var(--glass)}
+
+    .btn{background:linear-gradient(90deg,var(--accent),#4f46e5);padding:10px 14px;border-radius:10px;color:white;text-decoration:none;font-weight:600}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:28px}
+    .intro h1{margin:0;font-size:34px;line-height:1.03}
+    .intro p{color:var(--muted);margin:14px 0 18px;max-width:60%}
+    .actions{display:flex;gap:10px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* avatar */
+    .avatar{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}
+    .avatar img{width:180px;height:180px;border-radius:20px;object-fit:cover;border:6px solid rgba(255,255,255,0.04)}
+    .avatar h3{margin:12px 0 4px}
+    .avatar p{color:var(--muted);margin:0}
+
+    /* sections */
+    section{margin-top:28px}
+    h2.section-title{margin:0 0 14px;font-size:20px}
+
+    /* skills */
+    .skills{display:flex;gap:18px;flex-wrap:wrap}
+    .skill{flex:1 1 220px}
+    .skill .name{display:flex;justify-content:space-between;color:var(--muted);font-size:14px}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:8px;overflow:hidden}
+    .bar > span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#06b6d4)}
+
+    /* projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .project img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .project h4{margin:10px 0 6px}
+    .project p{color:var(--muted);margin:0 0 10px;font-size:14px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    /* contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    form input, form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    form label{color:var(--muted);font-size:13px}
+    form button{margin-top:8px}
+
+    footer{margin-top:28px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* responsiveness */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .intro p{max-width:100%}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .small{font-size:13px;color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>RK</span></div>
+        <div>
+          <div style="font-weight:700">Rishu Kumar</div>
+          <div class="small">Frontend developer • UI enthusiast</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="mailto:your.email@example.com?subject=Hiring%20Rishu">Hire Me</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h1>Hi, I’m <span style="color:var(--accent)">Rishu</span> — I build beautiful, fast interfaces.</h1>
+          <p>I’m a frontend developer focused on clean UI, performance, and smooth user experiences. I build responsive websites and small web apps using HTML, CSS and JavaScript.</p>
+          <div class="actions">
+            <a class="btn" href="#projects">See Projects</a>
+            <a style="background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);text-decoration:none" href="#contact">Contact Me</a>
+          </div>
+
+          <section id="skills" style="margin-top:18px">
+            <h2 class="section-title">Top skills</h2>
+            <div class="skills">
+              <div class="skill card">
+                <div class="name"><span>HTML &amp; CSS</span><strong>90%</strong></div>
+                <div class="bar"><span style="width:90%"></span></div>
+              </div>
+              <div class="skill card">
+                <div class="name"><span>JavaScript</span><strong>82%</strong></div>
+                <div class="bar"><span style="width:82%"></span></div>
+              </div>
+              <div class="skill card">
+                <div class="name"><span>React (basics)</span><strong>70%</strong></div>
+                <div class="bar"><span style="width:70%"></span></div>
+              </div>
+              <div class="skill card">
+                <div class="name"><span>UI / Visual Design</span><strong>78%</strong></div>
+                <div class="bar"><span style="width:78%"></span></div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="card avatar">
+          <!-- Replace src with your photo or avatar -->
+          <img id="avatarImg" src="image.jpg" alt="avatar">
+          <h3>Rishu Kumar</h3>
+          <p class="small">Frontend Developer</p>
+          <div style="height:12px"></div>
+          <a class="btn" href="#projects">My Work</a>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <article class="project card">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="project">
+            <h4>Grocery Delivery App</h4>
+            <p>Full-stack grocery app built with Django backend and responsive frontend. Search, cart and checkout flows implemented.</p>
+            <div class="tags"><div class="tag">Django</div><div class="tag">HTML/CSS</div><div class="tag">SQLite</div></div>
+            <div style="margin-top:8px"><a style="text-decoration:none;color:var(--accent)" href="#">View on GitHub →</a></div>
+          </article>
+
+          <article class="project card">
+            <img src="https://images.unsplash.com/photo-1523475496153-3d6cc3b6c7a5?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="project">
+            <h4>BigBasket Clone (React)</h4>
+            <p>Frontend clone focusing on product listing, filters and responsive layout. Component-driven UI.</p>
+            <div class="tags"><div class="tag">React</div><div class="tag">CSS Grid</div></div>
+            <div style="margin-top:8px"><a style="text-decoration:none;color:var(--accent)" href="#">Live Demo →</a></div>
+          </article>
+
+          <article class="project card">
+            <img src="https://images.unsplash.com/photo-1531497865146-1fce9a5d6e2c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="project">
+            <h4>AI Cartoon Channel (Ideas)</h4>
+            <p>Scripts and workflows for making AI-assisted cartoon videos — character design, voiceover and editing pipeline.</p>
+            <div class="tags"><div class="tag">AI</div><div class="tag">Video</div></div>
+            <div style="margin-top:8px"><a style="text-decoration:none;color:var(--accent)" href="#">Read Case Study →</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <p class="small">Want to work together? Send a message or email me — I usually reply within a day.</p>
+            <div style="height:12px"></div>
+            <div class="card small">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+                <div>
+                  <div style="font-weight:700">your.email@example.com</div>
+                  <div class="small">Patna, India</div>
+                </div>
+                <div class="chips">
+                  <a class="tag" href="#">GitHub</a>
+                  <a class="tag" href="#">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="card" id="contactForm" onsubmit="return onSubmit(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your name">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about the project"></textarea>
+            <button class="btn" type="submit">Send Message</button>
+            <div id="formMsg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Rishu Kumar</div>
+      <div class="small">Built with HTML • CSS • JS</div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function onSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const formMsg = document.getElementById('formMsg');
+      if(!name || !email || !msg){ formMsg.innerText = 'Please complete all fields.'; return false }
+      // This demo uses mailto (works locally). For production, wire to a server or a service (Formspree, Netlify Forms)
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+      window.location.href = `mailto:your.email@example.com?subject=${subject}&body=${body}`;
+      formMsg.innerText = 'Opening your email app...';
+      return false;
+    }
+
+    // lazy swap avatar (placeholder for customization)
+    const avatar = document.getElementById('avatarImg');
+    avatar.addEventListener('error', ()=>{ avatar.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 24 24%22%3E%3Crect width=%2224%22 height=%2224%22 fill=%22%237c3aed%22/%3E%3Ctext x=%225%22 y=%2216%22 fill=%22white%22%3ERK%3C/text%3E%3C/svg%3E' })
+
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){ e.preventDefault(); document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'}) }
+      })
+    })
+  </script>
+</body>
+</html>
